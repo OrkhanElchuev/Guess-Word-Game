@@ -15,27 +15,27 @@ enum EGuessStatus{
 
 // Class declaration
 class GameGuess{
-  public:
+public:
     GameGuess(); // Constructor 
     
     // Functions definition
-    void Reset();
-    int GetMaxTries() const;
-	  int GetCurrentTry() const;
-	  int GetHiddenWordLength() const;
-	  bool IsGameWon() const;
-	  EGuessStatus CheckGuessValidity(std::string) const;
-	  GameGuess SubmitValidGuess(std::string);
-	  std::string MyHiddenWord;
-	  int order = 0;
-	  int letter = 0;
+	void Reset();
+	int GetMaxTries() const;
+	int GetCurrentTry() const;
+	int GetHiddenWordLength() const;
+	bool IsGameWon() const;
+	EGuessStatus CheckGuessValidity(std::string) const;
+	GameGuess SubmitValidGuess(std::string);
+	std::string MyHiddenWord;
+	int order = 0;
+	int letter = 0;
   
-  private: 
+private: 
     //Variables definition
-    int MyCurrentTry;
-	  bool bGameIsWon;
-	  bool IsLowerCase(std::string) const;
-	  bool IsIsogram(std::string) const;
+	int MyCurrentTry;
+	bool bGameIsWon;
+	bool IsLowerCase(std::string) const;
+	bool IsIsogram(std::string) const;
 };
 
   
