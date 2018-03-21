@@ -2,12 +2,17 @@
 #include <iostream>
 #include <string>
 
+// Import Header file
+#include "GuessGame.h"
+
 // Functions declaration
 void PrintIntro();
 void PlayGame();
 void PrintGameSummary();
 std::string GetValidGuess();
 bool AskToPlayAgain();
+
+GameGuess Game; // Creating class object
 
 // The main function, where the program starts 
 int main() {
