@@ -35,6 +35,25 @@ void PrintIntro() {
 	return;
 }
 
+// The game body
+void PlayGame() {
+	Game.Reset();  // Reset all the game stats
+	// Get the maximum try for user according to the difficulty of the game
+	int MaxTries = Game.GetMaxTries(); 
+	// Iterate through the loop until the game is won or tries ends
+	while (!Game.IsGameWon() && Game.GetCurrentTry() <= MaxTries) {
+		std::string guess = GetValidGuess();
+		GameGuess GameGuessCount = Game.SubmitValidGuess(guess);
+		// Write the quantity of letters in the correct order
+		std::cout << "Order = " << GameGuessCount.order; 
+		// Write the quantity of letters which exists in the hidden word
+		std::cout << "  Letters = " << GameGuessCount.letter << "\n\n";
+	}
+	// Printing the messages at the end of the game according to the game status
+	PrintGameSummary();
+	return;
+}
+
 // Suggest to start a new game
 bool AskToPlayAgain() {
 	std::cout << "Do you want to play again?(Enter y - yes, or n - no): ";
@@ -73,7 +92,8 @@ std::string GetValidGuess() {
 		int CurrentTry = Game.GetCurrentTry(); // Get the number of current try 
 		std::cout << "Try (" << CurrentTry << " of " << Game.GetMaxTries() << ") Please, enter your guess: ";
 		std::getline(std::cin, guess); // Get an input from the user
-		if (guess == "show the word") { // Special password for revealing the hidden word
+		// Special password for revealing the hidden word
+		if (guess == "show the word") { 
 			std::cout << Game.MyHiddenWord << std::endl;
 			break;
 		}
