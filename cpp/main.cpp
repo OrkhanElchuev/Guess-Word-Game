@@ -121,3 +121,14 @@ std::string GetValidGuess() {
 	} while (Status != EGuessStatus::OK);
 	return guess;
 }
+
+// Print the game summary
+void PrintGameSummary() {
+	// Check if the game is won or not. Print corresponding messages according to the game status
+	if (Game.IsGameWon()) { 
+		std::cout << "WELL DONE - YOU WIN!\n";
+	}
+	else {
+		std::cout << "Better luck next time!\n";
+	}
+}
