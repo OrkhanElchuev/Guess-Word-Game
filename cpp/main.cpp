@@ -35,6 +35,16 @@ void PrintIntro() {
 	return;
 }
 
+// Suggest to start a new game
+bool AskToPlayAgain() {
+	std::cout << "Do you want to play again?(Enter y - yes, or n - no): ";
+	std::string response = "";
+	std::getline(std::cin, response);
+	// If the first letter of your input is y it will"be recognized as "yes"
+	return (response[0] == 'y') || (response[0] == 'Y');
+}
+
+
 // Some motivational phrases after each try
 void MotivationPhrase(){
 	int CurrentTry = Game.GetCurrentTry();
