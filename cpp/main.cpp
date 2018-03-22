@@ -36,7 +36,7 @@ void PrintIntro() {
 	std::cout << " If you guess the order of letters in the hidden word, the number of >Order< will increase!\n";
 	std::cout << " If you guess the letter from the hidden word, the number of >Letters< will increase!\n";
 	std::cout << " You will have " << Game.GetMaxTries() << " tries to guess the word. GOOD LUCK!\n";
-	std::cout << " Write <<show the word>> to reveal the word"; // Cheating phrase to unhide the word
+	std::cout << " Write <<show the word>> to reveal the word\n\n"; // Cheating phrase to unhide the word
 	return;
 }
 
