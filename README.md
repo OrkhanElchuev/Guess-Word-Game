@@ -10,7 +10,7 @@
 
 Game is created on C++ programming language, on Visual Studio.
 
-# To open the game
+## To open the game
 Download the files GuessGame.h, GuessGame.cpp, main.cpp
 or just copy the code and import it to your platform.
 
