@@ -17,7 +17,7 @@ void GameGuess::Reset()
 	srand(time(0));
 	int WordRandomNumber = 0;
 	// Generate a random number for array of words 
-  WordRandomNumber = 1 + (rand() % 44);
+  	WordRandomNumber = 1 + (rand() % 44);
 	std::string HIDDEN_WORD = "";
 	// Array of the hidden words
 	std::string arrayOfWords[] = { " ","fly","planet","drug","calm","done","crazy","blow","cow","bring", "slap",
