@@ -18,7 +18,7 @@ class GameGuess{
 public:
     GameGuess(); // Constructor 
     
-    // Functions definition
+    	// Functions definition
 	void Reset();
 	int GetMaxTries() const;
 	int GetCurrentTry() const;
@@ -26,6 +26,7 @@ public:
 	bool IsGameWon() const;
 	EGuessStatus CheckGuessValidity(std::string) const;
 	GameGuess SubmitValidGuess(std::string);
+	// Variables initiation
 	std::string MyHiddenWord;
 	int order = 0;
 	int letter = 0;
