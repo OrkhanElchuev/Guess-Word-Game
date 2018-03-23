@@ -29,3 +29,13 @@ void GameGuess::Reset()
 	bGameIsWon = false; 
 	return;
 }
+// Difficulty setup according to the lenght of hidden word 
+int GameGuess::GetMaxTries() const {
+	// {x, y}  x for number of letters in the word, y is for number of given tries to guess
+ 	std::map<int, int>WordLengthToMaxTries{ { 3,7 },{ 4,8 },{ 5,9 },{ 6,10 } }; 
+	return WordLengthToMaxTries[MyHiddenWord.length()];
+}
+
+int GameGuess::GetCurrentTry() const { return MyCurrentTry; }
+int GameGuess::GetHiddenWordLength() const { return MyHiddenWord.length(); }
+bool GameGuess::IsGameWon() const { return bGameIsWon; }
