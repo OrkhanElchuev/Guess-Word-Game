@@ -29,7 +29,8 @@ void GameGuess::Reset()
 	bGameIsWon = false; 
 	return;
 }
-// Difficulty setup according to the lenght of hidden word 
+
+// Difficulty setup according to the length of hidden word 
 int GameGuess::GetMaxTries() const {
 	// {x, y}  x for number of letters in the word, y is for number of given tries to guess
  	std::map<int, int>WordLengthToMaxTries{ { 3,7 },{ 4,8 },{ 5,9 },{ 6,10 } }; 
@@ -39,3 +40,24 @@ int GameGuess::GetMaxTries() const {
 int GameGuess::GetCurrentTry() const { return MyCurrentTry; }
 int GameGuess::GetHiddenWordLength() const { return MyHiddenWord.length(); }
 bool GameGuess::IsGameWon() const { return bGameIsWon; }
+
+// Function for checking whether the input is lowercase
+bool GameGuess::IsLowerCase(std::string Word) const
+{
+	for (auto Letter : Word) {
+		if (!islower(Letter)) {
+			return false;
+		}
+	}
+	return true;
+}
+
+// NOT FINISHED functions
+bool GameGuess::IsIsogram(std::string Word) const{
+}
+
+GameGuess GameGuess::SubmitValidGuess(std::string guess){
+}
+
+EGuessStatus GameGuess::CheckGuessValidity(std::string Guess) const { 
+}
