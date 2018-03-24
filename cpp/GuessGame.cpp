@@ -106,7 +106,8 @@ EGuessStatus GameGuess::CheckGuessValidity(std::string Guess) const {
 	}
 	else if (Guess.length() != GetHiddenWordLength()) {
 		return EGuessStatus::Wrong_Length; // Number of letters in the input is incorrect
-	} else {
+	}
+	else {
 		return EGuessStatus::OK; // If everything is fine
 	}
 }
