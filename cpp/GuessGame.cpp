@@ -20,9 +20,9 @@ void GameGuess::Reset()
   	WordRandomNumber = 1 + (rand() % 44);
 	std::string HIDDEN_WORD = "";
 	// Array of the hidden words
-	std::string arrayOfWords[] = { " ","fly","planet","drug","calm","done","crazy","blow","cow","bring", "slap",
+	std::string arrayOfWords[] = { " ","fly","planet","drug","calm","done","crazy","blow","cow","bring","slap",
 		"plant","print","frog","old","great","god","king","close","grade","mark","open","mango","image","mother","father","adult",
-		"crap","line","form","fry","son","nose","tag","yard","year","kid",
+		"soul","line","form","fry","son","nose","tag","yard","year","kid",
 		"magic","girl","boy","lemon","water","melon","type","pause" };
 	HIDDEN_WORD = arrayOfWords[WordRandomNumber];
 	MyHiddenWord = HIDDEN_WORD;
