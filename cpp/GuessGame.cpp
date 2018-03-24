@@ -68,8 +68,32 @@ bool GameGuess::IsIsogram(std::string Word) const{
 	return true; 
 }
 
-// Not finished
+// Function for increasing "order" and "letter" values and submitting the guess
 GameGuess GameGuess::SubmitValidGuess(std::string guess){
+	MyCurrentTry++;  // Get the current value of try
+	GameGuess GameGuessCount;
+	int WordLength = MyHiddenWord.length();
+	// Loop through all the tries
+	for (int MHWChar = 0; MHWChar < WordLength; MHWChar++) {   
+		// Loop  through the word length 
+		for (int GChar = 0; GChar < WordLength; GChar++) {
+			// Check the validity of input
+			if (guess[GChar] == MyHiddenWord[MHWChar]) {  
+				if (MHWChar == GChar) {
+					GameGuessCount.order++; 
+				}
+				else {
+					GameGuessCount.letter++;
+				}
+			}
+		}
+	}
+	if (GameGuessCount.order == WordLength) {
+		bGameIsWon = true;
+	} else {
+		bGameIsWon = false;
+	}
+	return GameGuessCount;
 }
 
 // Validity check for the input: isogram, lowercase, length.
