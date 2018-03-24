@@ -52,12 +52,37 @@ bool GameGuess::IsLowerCase(std::string Word) const
 	return true;
 }
 
-// NOT FINISHED functions
+// Check whether the input has repeating letters
 bool GameGuess::IsIsogram(std::string Word) const{
+	std::map<char, bool> LetterSeen; // Set up the map
+	for (auto Letter : Word) // For all letters of the word
+	{
+		Letter = tolower(Letter); 
+		if (LetterSeen[Letter]) { // If the letter is in the map
+			return false; // Word is not an isogram 
+		}
+		else {
+			LetterSeen[Letter] = true; // Add the letter to the map
+		}
+	}
+	return true; 
 }
 
+// Not finished
 GameGuess GameGuess::SubmitValidGuess(std::string guess){
 }
 
+// Validity check for the input: isogram, lowercase, length.
 EGuessStatus GameGuess::CheckGuessValidity(std::string Guess) const { 
+	if (!IsIsogram(Guess)) { // If the guess has repeating letters (not isogram)
+		return EGuessStatus::Not_Isogram;
+	}
+	if (!IsLowerCase(Guess)) {
+		return EGuessStatus::NOT_Lowercase; // If the word has upper case letter
+	}
+	else if (Guess.length() != GetHiddenWordLength()) {
+		return EGuessStatus::Wrong_Length; // Number of letters in the input is incorrect
+	else {
+		return EGuessStatus::OK; // If everything is fine
+	}
 }
